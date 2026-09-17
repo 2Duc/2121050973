@@ -1,0 +1,145 @@
+body {
+    margin: 0;  /* sát 2 bên lề */
+}
+.danh-muc {
+    background-color: #198cf0;
+    padding: 10px;
+}
+.danh-sach-muc {
+    /* bỏ dấu chấm ở danh sách khi dùng ul, li */
+    list-style: none;
+    padding: 0;
+    /* sát lề trên */
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+.lien-ket {
+    color: white;
+    /* text-decoration: bỏ gạch chân */
+    text-decoration: none;
+}
+main {
+    display: flex;
+}
+.trai {
+    width: 20%;
+    height: 100vh;
+    /* độ dày, loại đường viền, màu */
+    border-right: 2px solid #198cf0;
+}
+.khoi-dang-nhap {
+    height: 100px;
+    width: 100%;
+}
+form {
+    width: 80%;
+    margin: 10px auto;
+}
+.khoi-thong-tin {
+    width: 100%;
+    gap: 10px;
+}
+.khoi-thong-tin p {
+    margin: 0;
+}
+.khoi-thong-tin input {
+    width: 100%;
+    padding: 5px 0;
+}
+.quen-mat-khau {
+    display: flex;
+    justify-content: flex-end;
+}
+.quen-mat-khau-lien-ket {
+    color: #198cf0;
+    text-decoration: none;
+}
+button {
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+.login {
+    margin-bottom: 10px;
+}
+
+.phai {
+    width: 80%;
+}
+
+.tin {
+    width: 95%;
+    margin: 20px auto;
+    border: 1px solid #198cf0;
+    padding: 0 15px;
+    border-radius: 10px;
+    box-shadow: rgba(1, 1, 1, 0.2) 0px 1px 10px 1px;
+}
+
+.chuc-nang {
+    display: flex;
+    justify-content: space-between;
+}
+
+.xem-tiep {
+    color: #198cf0;
+}
+
+.gach-ngang {
+    background-color:  #198cf0;
+    width: 1140px;
+    height: 1px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.danh-sach-thong-bao {
+    display: flex;
+    gap: 10px;
+}
+
+.thong-bao {
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.thong-bao img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gach-xam {
+    background-color:  #98a0a6;
+    width: 60%;
+    height: 1px;
+    margin: 22px 0 0 0;
+}
+
+.khoi-thoi-gian .thoi-gian {
+    color: #98a0a6;
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.tieu-de-tin {
+    max-width: 40ch;
+}
+
+
+.thong-bao-su-kien {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thong-bao-su-kien p {
+    margin-right: 5px;
+}
+
+.gach-xam2 {
+    background-color:  #98a0a6;
+    width: 100%;
+    height: 1px;
+    margin: 0;
+}
