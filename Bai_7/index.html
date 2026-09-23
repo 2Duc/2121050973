@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <!-- Internal JavaScript -->
+    <script type="text/javascript">
+        // in ra màn hình
+        document.writeln('Hello World <br>');
+
+        // Khai báo biến
+        var ten = 'Duc <br>';
+        document.writeln(ten);
+
+        ten = 'Thanh <br>';
+        document.writeln(ten);
+
+        var namNay = 2026;
+        document.writeln(namNay);
+
+        // Phép toán
+        var soThuNhat = 10;
+        var soThuHai = 5;
+
+        // cong +
+        document.write('<br> Kết quả soThu1 + soThu2 là: ');
+        ketQua = soThuNhat + soThuHai;
+        document.write(ketQua);
+
+        // tru -
+        document.write('<br> Kết quả soThu1 - soThu2 là: ');
+        ketQua = soThuNhat - soThuHai;
+        document.write(ketQua);
+
+        // nhan *
+        document.write('<br> Kết quả soThu1 * soThu2 là: ');
+        ketQua = soThuNhat * soThuHai;
+        document.write(ketQua);
+
+        // chia /
+        document.write('<br> Kết quả soThu1 / soThu2 là: ');
+        ketQua = soThuNhat / soThuHai;
+        document.write(ketQua);
+ 
+        // chia lấy dư %
+        document.write('<br> Kết quả soThu1 % soThu2 là: ');
+        ketQua = soThuNhat % soThuHai;
+        document.write(ketQua);
+
+        // ++
+        document.write('<br>');
+        document.writeln(soThuNhat++);
+        document.write('<br>');
+        document.writeln(soThuNhat);
+        document.write('<br>');
+        document.writeln(++soThuNhat);
+
+        // --
+        document.write('<br>');
+        document.writeln(soThuNhat--);
+        document.write('<br>');
+        document.writeln(soThuNhat);
+        document.write('<br>');
+        document.writeln(--soThuNhat);
+
+        // +=
+        document.write('<br>');
+        soThuNhat += soThuHai
+        document.write(soThuNhat);
+
+        // -=
+        document.write('<br>');
+        soThuNhat -= soThuHai
+        document.write(soThuNhat);
+
+        // *=
+        document.write('<br>');
+        soThuNhat *= soThuHai
+        document.write(soThuNhat);
+
+        document.write('<br>');
+        var ho = 'Duong';
+        document.write(ho + ' ' + ten);
+        document.write(ho.length);
+        document.write('<br>')
+        // Kiem tra kieu du lieu cua bien
+        document.write(ho.constructor);
+        document.write('<br>');
+        document.write(typeof(ho));
+
+        // Kiem tra vi tri bat dau
+        document.write('<br>');
+        var hoVaTen = 'Duong Thanh';
+        document.write(hoVaTen.indexOf('T'));
+        document.write('<br>');
+        document.write(hoVaTen.includes('c'));
+        document.write('<br>');
+        document.write(hoVaTen.startsWith('Thanh'));
+        document.write(hoVaTen.includes('c'));
+        document.write('<br>');
+        // Thay the ky tu
+        document.write(hoVaTen.replace('Thanh', 'Duc'));
+        document.write('<br>');
+        // Thay the ky tu
+        document.write(hoVaTen.toLowerCase());
+        document.write('<br>');
+        document.write(hoVaTen.toUpperCase());
+        
+    </script>
+
+    <br>
+
+    <!-- External JS -->
+    <script src="./main.js"></script>
+</body>
+</html>

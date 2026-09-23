@@ -59,7 +59,7 @@ header {
 .banner {
     background-color: aliceblue;
     width: 95%;
-    height: 40vh;
+    height: 40;
     margin: 20px auto;
     border-radius: 30px;
 }
