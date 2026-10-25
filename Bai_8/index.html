@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <div>Nhập điểm A: <input id="diemA" type="number" /></div>
+    <div>Nhập điểm B: <input id="diemB" type="number" /></div>
+    <div>Nhập điểm C: <input id="diemC" type="number" /></div>
+    <div><button onclick="tinhDiem()">Tính điểm</button></div>
+    <div>Kết quả: <input id="ketQua" type="text" /></div>
+    <h1>Tính tuổi</h1>
+    <div>Năm sinh: <input id="namSinh" type="number" /></div>
+    <div><button onclick="tinhNamSinh()">Tính tuổi</button></div>
+    <div>Tuổi: <input id="tuoi" type="text" /></div>
+    <script>
+      // Chuyển chuỗi thành số: parseInt("42.33") parseFloat("42.33")
+
+      // function
+
+      // khong tham so
+      // function sayHello() {
+      //   document.write("Hello");
+      // }
+
+      // sayHello();
+
+      // document.write("<br>");
+
+      // //   co tham so
+      // function sayHello2(ten) {
+      //   document.write("Xin chao ban ", ten);
+      // }
+
+      // sayHello2("Abc");
+
+      // document.write("<br>");
+
+      // var a = prompt("Nhap so thu 1");
+      // var b = prompt("Nhap so thu 2");
+
+      // function tinhTong(a, b) {
+      //   if ((a >= "0" && a <= 9) || (b >= "0" && b <= "9")) {
+      //     Number(a);
+      //     Number(b);
+      //   } else if (isNaN(a) || isNaN(b)) {
+      //     alert("Vui long nhap so");
+      //   } else {
+      //     var tong = a + b;
+      //     document.write(tong);
+      //   }
+      // }
+      // tinhTong(a, b);
+
+      // Viết hàm tính điểm chữ dựa trên 3 đầu điểm (A, B, C)
+      // tong = A * 0.6 + B * 0.3 + C * 0.1 => Điểm chữ tương ứng
+      /* var a = prompt("Nhập điểm A: ");
+      var b = prompt("Nhập điểm B: ");
+      var c = prompt("Nhập điểm C: ");
+      tong = a * 0.6 + b * 0.3 + c * 0.1;
+      function tinhDiem() {
+        document.write("Điểm: ", tong);
+        document.writeln("<br>");
+        if (tong >= 9.0 && tong <= 10.0) {
+          document.write("A+");
+        } else if (tong >= 8.5 && tong < 9.0) {
+          document.write("A");
+        } else if (tong >= 8.0 && tong < 8.5) {
+          document.write("B+");
+        } else if (tong >= 7.0 && tong < 8.0) {
+          document.write("B");
+        } else if (tong >= 6.5 && tong < 7.0) {
+          document.write("C+");
+        } else if (tong >= 5.5 && tong < 6.5) {
+          document.write("C");
+        } else if (tong >= 5.0 && tong < 5.5) {
+          document.write("D+");
+        } else if (tong >= 4.0 && tong < 5.0) {
+          document.write("D");
+        } else {
+          document.write("F");
+        }
+      }
+
+      tinhDiem(); */
+
+      function tinhDiem() {
+        // diemA
+        var a = parseFloat(document.getElementById("diemA").value);
+        // diemB
+        var b = parseFloat(document.getElementById("diemB").value);
+        // diemC
+        var c = parseFloat(document.getElementById("diemC").value);
+
+        document.getElementById("ketQua").value = tinhDiemChu(a, b, c);
+      }
+      function tinhDiemChu(a, b, c) {
+        var tong = a * 0.6 + b * 0.3 + c * 0.1;
+        // document.write("Điểm: ", tong);
+        // document.writeln("<br>");
+        if (tong >= 9.0 && tong <= 10.0) {
+          kq = "A+";
+        } else if (tong >= 8.5 && tong < 9.0) {
+          kq = "A";
+        } else if (tong >= 8.0 && tong < 8.5) {
+          kq = "B+";
+        } else if (tong >= 7.0 && tong < 8.0) {
+          kq = "B";
+        } else if (tong >= 6.5 && tong < 7.0) {
+          kq = "C+";
+        } else if (tong >= 5.5 && tong < 6.5) {
+          kq = "C";
+        } else if (tong >= 5.0 && tong < 5.5) {
+          kq = "D+";
+        } else if (tong >= 4.0 && tong < 5.0) {
+          kq = "D";
+        } else {
+          kq = "F";
+        }
+        return kq;
+      }
+
+      // tinhDiemChu(a, b, c);
+
+      // Nhập năm sinh in số tuổi
+      function tinhNamSinh() {
+        var namSinh = parseInt(document.getElementById("namSinh").value);
+
+        var thoiGian = new Date();
+        var namNay = thoiGian.getFullYear();
+
+        var tuoi = namNay - namSinh;
+
+        document.getElementById("tuoi").value = tuoi;
+      }
+    </script>
+  </body>
+</html>
