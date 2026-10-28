@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ví dụ đổi video</title>
+    <style>
+      .video {
+        width: 50%;
+        margin: auto;
+      }
+
+      .danh-sach {
+        width: 80%;
+        display: flex;
+        margin: 50px auto;
+        justify-content: space-between;
+      }
+
+      .anh {
+        width: 24%;
+        img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- màn xem -->
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/vGvCnjY_4Tc?si=f1wDQeMXsUGVcwdC"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <p class="ten"></p>
+    </div>
+
+    <div class="danh-sach">
+      <div class="anh" onclick="chonVid(1)">
+        <img src="./assets/banner.jpg" alt="" />
+        <p>Tên bài hát</p>
+      </div>
+      <div class="anh" onclick="chonVid(2)">
+        <img src="./assets/zootopia.jpg" alt="" />
+        <p>Tên bài hát</p>
+      </div>
+      <div class="anh" onclick="chonVid(3)">
+        <img src="./assets/banner.jpg" alt="" />
+        <p>Tên bài hát</p>
+      </div>
+      <div class="anh" onclick="chonVid(4)">
+        <img src="./assets/zootopia.jpg" alt="" />
+        <p>Tên bài hát</p>
+      </div>
+    </div>
+
+    <script>
+      var danhSachVid = [
+        {
+          id: 1,
+          ten: "Tower Defence 1",
+          duongDanAnh: "/assets/banner.jpg",
+          duongDanYoutube:
+            "https://www.youtube.com/embed/vGvCnjY_4Tc?si=f1wDQeMXsUGVcwdC",
+        },
+        {
+          id: 2,
+          ten: "Tower Defence 2",
+          duongDanAnh: "/assets/zootopia.jpg",
+          duongDanYoutube:
+            "https://www.youtube.com/embed/Y0c3nKWhlIA?si=kHUSq6Y0BI7gB_X2",
+        },
+        {
+          id: 3,
+          ten: "Tower Defence 3",
+          duongDanAnh: "/assets/banner.jpg",
+          duongDanYoutube:
+            "https://www.youtube.com/embed/vGvCnjY_4Tc?si=f1wDQeMXsUGVcwdC",
+        },
+        {
+          id: 4,
+          ten: "Tower Defence 4",
+          duongDanAnh: "/assets/zootopia.jpg",
+          duongDanYoutube:
+            "https://www.youtube.com/embed/Y0c3nKWhlIA?si=kHUSq6Y0BI7gB_X2",
+        },
+      ];
+
+      function chonVid(id) {
+        for (let i = 0; i < danhSachVid.length; i++) {
+          if (danhSachVid[i].id == id) {
+            document.getElementsByClassName("ten")[0].innerHTML =
+              danhSachVid[i].ten;
+            document.getElementsByTagName("video")[0].src =
+              danhSachVid[i].duongDanYoutube;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
