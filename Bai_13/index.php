@@ -1,22 +1,63 @@
-<?php
-    // 1. Session
-    session_start();  // Bắt đầu session
-    $_SESSION['Name'] = 'user';
-    echo 'Session Name: ' . $_SESSION['Name'];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            background-color: blue;
+            padding: 10px;
+        }
+        a {
+            text-decoration:  none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <?php
+        session_start();
+        // Nếu chưa đăng nhập thì chưa chuyển trang
+        if (!isset($_SESSION['dangnhap'])) {
+            header('Location: dangnhap.php');
+        }
+        include 'connect.php';
+    ?>
 
-    echo '<br>';
+    <nav>
+        <ul>
+            <li><a href="index.php?page_layout=trangchu">Trang chủ</a></li>
+            <li><a href="index.php?page_layout=taikhoan">Tài khoản</a></li>
+            <li><a href="index.php?page_layout=danhmuc">Danh mục</a></li>
+            <li><a href="index.php?page_layout=phim">Phim</a></li>
+        </ul>
+    </nav>
 
-    // 2. Cookie
-    $cookieName = "user";
-    $cookieValue = "Kien";
-
-    setcookie($cookieName, $cookieValue, time() + 86400, "/");
-    if (isset($_COOKIE[$cookieName])) {
-        // 
-        echo 'Cookie đã tồn tại';
-    } else {
-        // Trong thời gian đầu chạy, giá trị mới được khởi tạo
-        echo 'Cookie chưa được thiết lập';
-    }
-    
-?>
+    <?php
+        if (isset($_GET['page_layout'])) {
+            $page = $_GET['page_layout'];
+            switch ($page) {
+                case 'trangchu':
+                    include 'trangchu.php';
+                    break;
+                case 'taikhoan':
+                    include 'taikhoan.php';
+                    break;
+                case 'danhmuc':
+                    include 'danhmuc.php';
+                    break;
+                case 'phim':
+                    include 'phim.php';
+                    break;
+                case 'themtaikhoan':
+                    include 'themtaikhoan.php';
+                    break;
+            }
+        }
+    ?>
+</body>
+</html>

@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    // Dùng include để kết nối 2 file
+    include 'connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,10 +58,19 @@
         if (isset($_POST['tenDangNhap']) && isset($_POST['matKhau'])) {
             $tenDangNhap = $_POST['tenDangNhap'];
             $matKhau = $_POST['matKhau'];
-            if ($tenDangNhap == 'admin' && $matKhau == '123') {
-                session_start();
+
+            $sql = "SELECT * FROM `nguoi_dung` WHERE ten_dang_nhap = '$tenDangNhap' AND mat_khau = '$matKhau'";
+            $result = mysqli_query($conn, $sql);
+            
+            /* if ($tenDangNhap == 'admin' && $matKhau == '123') {
                 $_SESSION['dangnhap'] = 'thanhcong';
                 header('Location: trangchu.php');  // Chuyển hướng đến trang khác
+            } else {
+                echo 'Tên đăng nhập hoặc mật khẩu không đúng';
+            } */
+            if (mysqli_num_rows($result) > 0) {
+                $_SESSION['dangnhap'] = 'thanhcong';
+                header('Location: index.php');  // Chuyển hướng đến trang khác
             } else {
                 echo 'Tên đăng nhập hoặc mật khẩu không đúng';
             }
