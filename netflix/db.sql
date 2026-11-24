@@ -40,7 +40,7 @@ CREATE TABLE dao_dien (
 )
 
 --phim
-CREATE TABLE dao_dien (
+CREATE TABLE phim (
     id key AUTO_INCREMENT int,
     ten_phim varchar(255),
     quoc_gia varchar(100),

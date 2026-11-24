@@ -16,6 +16,12 @@
             padding: 10px;
             border-radius: 10px;
         }
+        .capnhat{
+            background-color: red;
+        }
+        .xoa {
+            background-color: green;
+        }
     </style>
 </head>
 <body>
@@ -33,23 +39,28 @@
         <tr>
             <th>id</th>
             <th>Tên đăng nhập</th>
-            <th>email</th>
+            <th>Email</th>
             <th>Họ tên</th>
             <th>Ngày sinh</th>
             <th>Số điện thoại</th>
             <th>Giới tính</th>
+            <th>Chức năng</th>
         </tr>
         <?php
             while ($row = mysqli_fetch_array($result)) {
         ?>
         <tr>
-            <td><?php $row['id'] ?></td>
-            <td><?php $row['ten_dang_nhap'] ?></td>
-            <td><?php $row['email'] ?></td>
-            <td><?php $row['ho_ten'] ?></td>
-            <td><?php $row['ngay_sinh'] ?></td>
-            <td><?php $row['so_dien_thoai'] ?></td>
-            <td><?php $row['gioi_tinh'] ?></td>
+            <td><?php echo $row['id'] ?></td>
+            <td><?php echo $row['ten_dang_nhap'] ?></td>
+            <td><?php echo $row['email'] ?></td>
+            <td><?php echo $row['ho_ten'] ?></td>
+            <td><?php echo $row['ngay_sinh'] ?></td>
+            <td><?php echo $row['so_dien_thoai'] ?></td>
+            <td><?php echo $row['gioi_tinh'] == true ? 'Nam' : 'Nữ' ?></td>
+            <td>
+                <a class="capnhat" href="index.php?page_layout=capnhattaikhoan&id=<?php echo $row['id'] ?>">Cập nhật</a>
+                <a class="xoa" href="index.php?page_layout=xoataikhoan&id=<?php echo $row['id'] ?>">Xóa</a>
+            </td>
         </tr>
         <?php
            
