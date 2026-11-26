@@ -82,8 +82,8 @@
                 !empty($gioitinh)
                 // người dùng điền đủ thông tin
                 ){
-                $id = $_POST['id'];
-                $sql = "UPDATE `nguoi_dung` SET `ten_dang_nhap`='$tenDangNhap',`mat_khau`='$matKhau',`email`='$email',`ho_ten`='$hoten',`ngay_sinh`='$ngaysinh',`so_dien_thoai`='$sdt',`gioi_tinh`='$gioitinh' WHERE 1";
+                $id = $_GET['id'];
+                $sql = "UPDATE `nguoi_dung` SET `ten_dang_nhap`='$tenDangNhap',`mat_khau`='$matKhau',`email`='$email',`ho_ten`='$hoten',`ngay_sinh`='$ngaysinh',`so_dien_thoai`='$sdt',`gioi_tinh`='$gioitinh' WHERE id = $id";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result) {

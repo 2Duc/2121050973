@@ -30,32 +30,30 @@
     </style>
 </head>
 <body>
-    <h1>Cập nhật danh mục</h1>
-    <form class="khoi" action="index.php?page_layout=capnhatdanhmuc" method="POST">
+    <h1>Thêm thể loại</h1>
+    <form class="khoi" action="index.php?page_layout=themtheloai" method="POST">
         <div class="i-text">
-            <input type="text" name="tenDanhMuc" id="" placeholder="Danh mục">
+            <input type="text" name="tenDanhMuc" id="" placeholder="Tên thể loại">
         </div>
-        <button>Lưu</button>
+        <button>Thêm</button>
     </form>
+
     <?php 
         if (isset($_POST['tenDanhMuc'])) {
             $tenDanhMuc = $_POST['tenDanhMuc'];
             if (!empty($tenDanhMuc)) {
-                $id = $_POST['id'];
-                $sql = "UPDATE `the_loai` SET `ten_the_loai`='$tenDanhMuc' WHERE `id`='$id'";
+                $sql = "INSERT INTO `the_loai`(`ten_the_loai`) VALUES ('$tenDanhMuc')";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result) {
-                    header('Location: index.php?page_layout=danhmuc');
-                } else {
-                    echo 'Cập nhật danh mục thất bại';
+                    header('Location: index.php?page_layout=theloai');
                 }
             } else {
-                //người dùng nhập thiếu thông tin
                 echo "<p style='color: red'>Vui lòng nhập đầy đủ thông tin</p>";
             }
-            
         }
+        
+
     ?>
 </body>
 </html>

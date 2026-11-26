@@ -31,7 +31,14 @@
     </div>
     
     <?php
-        $sql = "select * from phim";
+        $sql = "select * from phim p 
+        join dao_dien dd 
+        on p.dao_dien_id = dd.id
+        join phim_the_loai ptl
+        on p.id = ptl.phim_id
+        join the_loai tl
+        on ptl.the_loai_id = tl.id
+        ";
         $result = mysqli_query($conn, $sql);
     ?>
 
@@ -40,6 +47,8 @@
             <th>id</th>
             <th>Tên phim</th>
             <th>Quốc gia</th>
+            <th>Thể loại</th>
+            <th>Đạo diễn</th>
             <th>Năm phát hành</th>
             <th>Độ tuổi</th>
             <th>Mô tả</th>
@@ -52,6 +61,8 @@
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['ten_phim'] ?></td>
             <td><?php echo $row['quoc_gia'] ?></td>
+            <td><?php echo $row['ten_the_loai'] ?></td>
+            <td><?php echo $row['dao_dien_id'] ?></td>
             <td><?php echo $row['nam'] ?></td>
             <td><?php echo $row['do_tuoi'] ?></td>
             <td><?php echo $row['mo_ta'] ?></td>

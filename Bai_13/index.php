@@ -32,7 +32,7 @@
         <ul>
             <li><a href="index.php?page_layout=trangchu">Trang chủ</a></li>
             <li><a href="index.php?page_layout=taikhoan">Tài khoản</a></li>
-            <li><a href="index.php?page_layout=danhmuc">Danh mục</a></li>
+            <li><a href="index.php?page_layout=theloai">Thể loại</a></li>
             <li><a href="index.php?page_layout=phim">Phim</a></li>
         </ul>
     </nav>
@@ -47,8 +47,8 @@
                 case 'taikhoan':
                     include 'taikhoan.php';
                     break;
-                case 'danhmuc':
-                    include 'danhmuc.php';
+                case 'theloai':
+                    include 'theloai.php';
                     break;
                 case 'phim':
                     include 'phim.php';
@@ -62,14 +62,14 @@
                 case 'xoataikhoan':
                     include 'xoataikhoan.php';
                     break;
-                case 'themdanhmuc':
-                    include 'themdanhmuc.php';
+                case 'themtheloai':
+                    include 'themtheloai.php';
                     break;
-                case 'capnhatdanhmuc':
-                    include 'capnhatdanhmuc.php';
+                case 'capnhattheloai':
+                    include 'capnhattheloai.php';
                     break;
-                case 'xoadanhmuc':
-                    include 'xoadanhmuc.php';
+                case 'xoatheloai':
+                    include 'xoatheloai.php';
                     break;
                 case 'themphim':
                     include 'themphim.php';

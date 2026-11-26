@@ -30,10 +30,10 @@
     </style>
 </head>
 <body>
-    <h1>Danh mục</h1>
+    <h1>Thể loại</h1>
 
     <div style="margin: 20px 0;">
-        <a class="btn-add" href="index.php?page_layout=themdanhmuc">Thêm danh mục</a>
+        <a class="btn-add" href="index.php?page_layout=themtheloai">Thêm thể loại</a>
     </div>
 
     <?php
@@ -52,8 +52,8 @@
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['ten_the_loai'] ?></td>
             <td class="chucnang">
-                <a class="capnhat" href="index.php?page_layout=capnhatdanhmuc&id=<?php echo $row['id'] ?>">Cập nhật</a>
-                <a class="xoa" href="index.php?page_layout=xoadanhmuc&id=<?php echo $row['id'] ?>">Xóa</a>
+                <a class="capnhat" href="index.php?page_layout=capnhattheloai&id=<?php echo $row['id'] ?>">Cập nhật</a>
+                <a class="xoa" href="index.php?page_layout=xoatheloai&id=<?php echo $row['id'] ?>">Xóa</a>
             </td>
         </tr>
         <?php } ?>
